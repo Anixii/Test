@@ -12,7 +12,8 @@ function App() {
   return(   
     <>         
     <SomeContext.Provider value={providerData}> 
-      <MainPage/>
+      <MainPage/> 
+      <h1>Hello Arman</h1>
     </SomeContext.Provider>
     </>
   )
