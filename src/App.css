@@ -1,0 +1,5 @@
+.navlinks.active{ 
+    font-size: 48px; 
+    color: red;
+    transition: all 0.2s ease-in-out;
+}

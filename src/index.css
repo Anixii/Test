@@ -1,0 +1,7 @@
+.navlink .active{ 
+  color: 'red'; 
+  font-size: 18px; 
+  text-decoration: none;
+
+  //Абсолютное любые стили
+}

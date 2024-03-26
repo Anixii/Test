@@ -1,0 +1,8 @@
+.title{ 
+    color: red; 
+    font-size: 28px; 
+    font-weight: 700;
+}
+.title__span{ 
+    color: blueviolet;
+}
