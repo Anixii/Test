@@ -13,7 +13,8 @@ function App() {
     <>         
     <SomeContext.Provider value={providerData}> 
       <MainPage/> 
-      <h1>Hello Arman</h1>
+      <h1>Hello Arman</h1> 
+      <h2>Hello Kurban</h2>
     </SomeContext.Provider>
     </>
   )
