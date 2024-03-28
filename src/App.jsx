@@ -1,25 +1,31 @@
-import { useSelector,useDispatch } from 'react-redux'
-import { addId, getFavoritesThunk, removeId } from './store/slice/slice'; 
-import { useState } from 'react';
-
-import {SomeContext} from './context'
-function App() {     
-  const [data,setData] = useState([]) 
-  const providerData = { 
-    onChange: setData, 
-    products:data
+import { useState } from "react"
+import { add,remove,addValues } from "./store/slices/counterSlice"
+import {useSelector,useDispatch} from 'react-redux'
+function App() { 
+  const [name, setName] = useState('')
+  const dispatch = useDispatch()    
+  const onHandleClick = () =>{ 
+    dispatch(add())
   }
+  const onHandleClickRem = () =>{ 
+    dispatch(remove())
+  } 
+  const onHandleAddValues = () =>{ 
+    dispatch(addValues(+name))
+  }
+  const store = useSelector((store) => store.counterSlice.value)
+  console.log(store);
   return(   
-    <>         
-    <SomeContext.Provider value={providerData}> 
-      <MainPage/> 
-      <h1>Hello Arman</h1> 
-      <h2>Hello Kurban</h2>
-    </SomeContext.Provider>
+    <>          
+      {store}
+      <button onClick={onHandleClick}>Добавить</button>
+      <button onClick={onHandleClickRem}>Delte</button> 
+      <div>
+      <input value={name} onChange={(e) => setName(e.target.value)} type="text" />
+      <button onClick={onHandleAddValues}>Добавить значение в инпуте</button>
+      </div>
     </>
   )
 }  
 
 export default App
-{/* */}
-// {/* <Route path='/post' element={<Posts/>}/> */}
